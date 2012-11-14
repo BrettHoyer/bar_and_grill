@@ -1,0 +1,9 @@
+<% @categories.each do |category| %>
+<h3><%= category.name %></h3></br>
+<%= image_tag category.photo_file, :width => '300' %>
+	<% category.items.each do |item| %>
+	<li><%=number_to_currency item.price, :precision => 0 %>
+	<%= item.name %>
+	<%= item.description %></li>
+	<% end %>
+<% end %>
